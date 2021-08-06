@@ -1,0 +1,72 @@
+<html>
+    <head>
+        <meta charset="UTF.8">
+     <title>HTML Lists</title>
+<style>
+    {
+        padding:0;
+        margin:0;
+
+    }
+    header, main{
+        margin: 1rem 2 rem;
+
+    }
+    ul{
+        list-style-position:inside ;
+        list-style-type: square;
+        outline: 1px solid red;
+        margin: 1rem;
+    }
+    ol{
+        list-style-position:inside ;
+        list-style-type: upper-roman;
+        outline: 1px solid red;
+        margin: 1rem;
+        ol ol{
+            list-style-type: lower-roman;
+        }
+    }
+    dl{
+        list-style-position:inside ;
+        outline: 1px solid red;
+        margin: 1rem;
+    }
+    dt{
+        font-weight: 700;
+    }
+    dd{
+        text-indent: 2rem;
+        font-weight: 100;
+    }
+</style>
+</head>
+<body>
+    <header>
+        <h1>HTML Lists</h1>
+    </header>
+    <main>
+        <ul>
+            <li>Item</li>
+            <li>Item</li>
+            <li>Item</li>
+        </ul>
+        <ol>
+            <li>Item A</li>
+            <li>added some text<ol>
+                <li>level 2</li>
+                <li>level 2</li>
+                <li>level 2</li>
+                </ol></li>
+            <li>Item B</li>
+            <li>Item C</li>
+        </ol>
+        <dl>
+            <dt>Dictionary Term</dt>
+            <dd>Dictionary Definition</dd>
+            <dt>Acher</dt>
+            <dd>Sterling Acher, son of Hallory Acher, world-reknowed spy.</dd>
+        </dl>
+    </main>
+</body>
+</html>
