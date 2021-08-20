@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>CSS&amp; HTML Quotation Marks</title>
+        <meta name="viewport" content="width=device-width">
+        <link rel="stylesheet" href="main.css"/>
+        <style>
+            q{
+                quotes: " \210E" " \201D" "<<"">>";
+            }
+            q::before{
+                content: open-quote;
+
+            }
+            q::after{
+                content: close-quote;
+            }
+            .qt{
+                quotes:"'" "'"
+            }
+            .qt{
+                ::before{
+                  content: open-quote;
+                }
+            .qt::after{
+                content:close-quote
+            }
+            p:not(.qt){
+                font-family: serif;
+            }
+            p[lang]::before{
+                content:open-quote;
+            }
+        </style>
+</head>
+<body>
+    <header>
+        <h1>CSS &amp; HTML Quotation Marks</h1>
+        </header>
+        <main>
+            <p><q>This <q>is</q> a quote</q></p>
+            <p class="qt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit voluptatem quis numquam alias molestias quia quos, hic exercitationem saepe vel fugiat voluptatum aut itaque nisi sint libero sed voluptate error.
+            </p>
+            <p lang="en-CA">Volupate repudiandae dolor ipsam dolorubis laboriaosam ea magnam, illum sit architecto alias atque distninctio.
+            </p>
+            <p lang="fr">Volupate repudiandae dolor ipsam dolorubis laboriaosam ea magnam, illum sit architecto alias atque distninctio.
+            </p>
+            <ul>
+                <li>&lsquo; lsquo\2018</li>
+                <li>&rsquo; rsquo\2019</li>
+                <li>&ldquo; ldquo\201C</li>
+                <li>&rdquo; rdquo\201D</li>
+                <li>&sbquo; sbquo\201A</li>
+                <li>&bdquo; bdquo\201E</li>
+                <li>&laquo; laquo\00AB</li>
+                <li>&raquo; raquo\00AB</li>
+                <li>&lang; lang\00AB</li>
+                <li>&rang; rang\00AB</li>
+
+                <li>&quot; quot\00AB</li>
+                <li>&apos; apos\00AB</li>
+            </ul>
+                </main>
+    </body>
+</html>
