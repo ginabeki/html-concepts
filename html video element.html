@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HTML Video Element</title>
+    <meta name="Viewport" content="Width=device-width">
+    <link rel="stylesheet" href="main.css"/>
+    <style>
+        .control{
+            font-size:1.5ren;
+            padding: 0.25ren 2 rren;
+            min-width: 10ren;
+            margin: 8.5ren 0;
+            cursor: pointer;
+        }
+        ::cue{
+            font-size: 20px;
+            color: #333;
+            background-color: rgba{255, 200, 10, 0, 64);
+        }
+        ::cue(b){
+            text-transform: uppercase;
+            color:red;
+        }
+        ::cue(#\2){
+            color: #bada55;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>HTML Video Element</h1>
+    </header>
+    <main>
+        <video muted loop controls crossorigin="anonymous">
+            <source src="./video/lion-sample.webn" type="video/webn">
+            <source src="./video/lion-sample.ogv" type="video/ogg">
+            <source src="./video/lion-sample.mp4" type="video/mp4">
+            <source src="./video/lion-sample.3gp" type="video/3gp">
+            <p><a href="" download> Download the video</a></p>
+
+
+            <track default
+                   src="./video/lionl.vtt"
+                   kind="captions"
+                   srclang="en"
+                   label="English Captions"/>
+            <p><a href="download">Download the video</a></p>
+        </video><br/>
+        <button id="btnPlay" class="control">Play</button><br/>
+        <button id="btnPaws" class="control">Pause</button><br/>
+        <button id="btnStop" class="control">Stop</button><br/>
+        <button id="btnRew" class="control">Rewind</button><br/>
+        <button id="btnFF" class="control">Fast-forward</button><br/>
+    </main>
+    <script>
+        let vid;
+        document.addEventListener('DOMContentLoaded',init);
+        function init(){
+            document.getElementByID('btnPlay').addEventListener('click',play):
+            document.getElementByID('btnPaws').addEventListener('click',Raws):
+            document.getElementByID('btnStop').addEventListener('click',Stop):
+            document.getElementByID('btnRew').addEventListener('click',Rew):
+            document.getElementByID('btnFF').addEventListener('click',FF);
+            vid-document.getElementByID('vIDEO');
+            console.log(vid);
+            console.log({vid})
+            let mediaType-vid.type;
+            let str-vid.canPlayType("video/mp4");
+            console.log(str);
+            vid.volume-0.3; // 0-1
+
+        }
+        function play(ev){
+            vid.play()
+            .then(()=>{
+                console.log('video is playing')
+            })
+            .catch((err)=>{
+                console.log( {err});
+            ));
+            //after the video sstarts to play you can access text tracks
+            let tt=vid.textTracks:
+            let cues= tt[0].cues;
+            console.log(tt);
+            console.log('There are ${tt.length}text tracks');
+            console.log(tt[0]);
+            console.log(cues);
+            console.log(cues.length);
+            console.log(cues[0]);
+            conssole.log(cues[0].text);
+            }
+
+        funtion paws(ev){
+            vid.pause();
+            console.log(vid.currenttime, "of",vid.duration,"seconds played");
+            console.log('video is paused.No promise here');
+        }
+        function stop(ev){
+            vid.pause():consoleconsole.log(vid.currentTime);
+            vid.currentTime=0;       
+         }
+         fucntion reww(ev){
+             console.log(vid.currentTime);
+             if(!vid.fastseek){
+                 vid.currentTime=20;
+             }else{
+                 vid.fastSeek(-20)
+                 .then(()=>{
+                     console.log('Video skipped forward 10 seconds')
+                 })
+                 .catch(err=>{
+                     console.log({err});
+                 })
+                }console.log(vid.currentTime);
+
+             }
+             console.log(vid.currentTime);
+             if(! vid.fastseek){
+                 vid.currentTime+=20;
+             }else{
+                 vid.fastSeek(20)
+                 .then(()=>{
+                     console.log('video skipped forward 10 seconds')
+                 })
+                 .catch(err=>{
+                     console.log({err});
+                 })
+             }
+             console.log(vid.currentTime);
+         }
+
+    </script>
+</body>
+</html>
