@@ -1,2 +1,2 @@
 # html-concepts
-Learning html concepts
+Learn and practice
